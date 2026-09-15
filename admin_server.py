@@ -269,6 +269,19 @@ class AdminHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self) -> None:
+        try:
+            self._do_GET()
+        except Exception as exc:
+            sys.stderr.write("GET error: %s\n" % exc)
+            try:
+                self.send_html(
+                    page("错误", f"<p class='err'>服务器处理出错：{html.escape(str(exc))}</p><p><a href='/'>返回</a></p>"),
+                    500,
+                )
+            except Exception:
+                pass
+
+    def _do_GET(self) -> None:
         parsed = urlparse(self.path)
         path = parsed.path
 
@@ -332,7 +345,12 @@ class AdminHandler(BaseHTTPRequestHandler):
         # prevent path escape
         candidate = (ROOT / "site" / rel).resolve()
         site_root = (ROOT / "site").resolve()
-        if not str(candidate).startswith(str(site_root)) or not candidate.is_file():
+        try:
+            candidate.relative_to(site_root)
+        except ValueError:
+            self.send_html(page("预览", "<p class='err'>非法路径</p><p><a href='/'>返回</a></p>"), 400)
+            return
+        if not candidate.is_file():
             self.send_html(page("预览", "<p class='err'>找不到预览文件，请先保存构建一次。</p><p><a href='/'>返回</a></p>"), 404)
             return
         data = candidate.read_bytes()
@@ -346,6 +364,19 @@ class AdminHandler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_POST(self) -> None:
+        try:
+            self._do_POST()
+        except Exception as exc:
+            sys.stderr.write("POST error: %s\n" % exc)
+            try:
+                self.send_html(
+                    page("错误", f"<p class='err'>保存失败：{html.escape(str(exc))}</p><p><a href='/'>返回</a></p>"),
+                    500,
+                )
+            except Exception:
+                pass
+
+    def _do_POST(self) -> None:
         parsed = urlparse(self.path)
         if parsed.path != "/save":
             self.send_html(page("错误", "<p>不支持的操作</p>"), 405)
@@ -379,12 +410,12 @@ def main() -> None:
     POSTS_DIR.mkdir(parents=True, exist_ok=True)
     server = ThreadingHTTPServer((HOST, PORT), AdminHandler)
     server.allow_reuse_address = True
-    print(f"Admin editor: http://{HOST}:{PORT}/")
-    print("Press Ctrl+C to stop.")
+    print(f"Admin editor: http://{HOST}:{PORT}/", flush=True)
+    print("Press Ctrl+C to stop.", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        print("\nStopped.")
+        print("\nStopped.", flush=True)
 
 
 if __name__ == "__main__":
