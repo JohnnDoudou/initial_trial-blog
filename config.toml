@@ -1,0 +1,15 @@
+# 站点配置（改这里，再运行 python build.py）
+
+[site]
+name = "initial_trial-blog"
+tagline = "本地静态试验"
+home_heading = "一个很轻的个人博客试验"
+home_lead = "右侧边栏可去首页、文章/日志与标签。阅读在静态页；写文章请用本机网页编辑器。"
+posts_lead = "在这里预览已有内容。点标签可看分类；新建或修改文章请用本机编辑器（见下方说明）。"
+tags_lead = "按标签浏览文章。标签写在每篇文章的文头元数据里。"
+footer = "本地试验博客 · 由 posts/ 中的 Markdown 生成"
+
+[nav]
+home_label = "首页"
+posts_label = "文章/日志"
+tags_label = "标签"

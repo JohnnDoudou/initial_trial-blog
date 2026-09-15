@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学习笔记：什么是静态站 · initial_trial-blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <main class="main">
+      
+<p class="eyebrow">Article</p>
+<h1>学习笔记：什么是静态站</h1>
+<p class="meta">发布时间 2026-09-14 22:00 · 源文件 <code>2026-09-14-learning-notes.md</code></p>
+<div class="tags"><a class="tag" href="../tags/vibe入门.html">Vibe入门</a></div>
+<article class="prose">
+<h1>学习笔记：什么是静态站</h1>
+<p>静态站的意思是：网站主要由已经生成好的 HTML、CSS 等文件组成，访问时服务器主要负责「把文件发过去」，而不在每次访问时动态查数据库写页面。</p>
+<h2>和这份试验的关系</h2>
+<ul><li>文章保存在 <code>posts/</code> 目录的 <code>.md</code> 文件里</li><li><code>build.py</code> 把它们转换成 <code>site/</code> 里的网页</li><li>用浏览器打开 <code>site/index.html</code> 就能预览</li></ul>
+<p>以后如果要发布到网上，通常也是把 <code>site/</code> 里的文件上传或交给托管平台。</p>
+</article>
+
+<section class="ai-brief" aria-label="AI 提炼">
+  <div class="ai-brief-head">
+    <p class="ai-label">AI 提炼</p>
+    <p class="ai-sub">结构化摘要 · 便于回顾</p>
+  </div>
+  <table class="ai-table">
+    <tbody>
+      <tr><th scope="row">一句话</th><td>静态站把页面预先生成好，访问时主要是在「送文件」，而不是现场查库拼页面。</td></tr><tr><th scope="row">要点</th><td><ul class="ai-points"><li>posts/ 保存 Markdown 内容</li><li>build.py 负责转换成 HTML</li><li>部署通常就是发布 site/ 目录</li></ul></td></tr><tr><th scope="row">下一步</th><td>对照本站目录，分清「源文件」和「生成结果」各自做什么。</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<p><a href="../posts.html">← 返回文章列表</a></p>
+
+      <p class="footer-note">本地试验博客 · 由 posts/ 中的 Markdown 生成</p>
+    </main>
+    <aside class="sidebar">
+      <a class="brand" href="../index.html">
+        initial_trial-blog
+        <span>本地静态试验</span>
+      </a>
+      <nav class="nav">
+        <a class="" href="../index.html">首页</a>
+        <a class="active" href="../posts.html">文章/日志</a>
+        <a class="" href="../tags.html">标签</a>
+      </nav>
+    </aside>
+  </div>
+</body>
+</html>

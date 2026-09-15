@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>日摘 · 2026-09-15 · initial_trial-blog</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <main class="main">
+      
+<p class="eyebrow">Article</p>
+<h1>日摘 · 2026-09-15</h1>
+<p class="meta">发布时间 2026-09-15 23:59 · 源文件 <code>2026-09-15-daily-digest.md</code></p>
+<div class="tags"><a class="tag" href="../tags/日摘.html">日摘</a></div>
+<article class="prose">
+<h1>日摘 · 2026-09-15</h1>
+<p>这是博客的第一份「日摘」：用表格回顾当天实际做了什么，而不是用脚本从正文里剪几句充数。</p>
+<h2>任务</h2>
+<table class="md-table"><thead><tr><th>项</th><th>内容</th><th>结果</th></tr></thead><tbody><tr><td>建站</td><td>本地静态博客：首页、侧栏、文章列表</td><td>完成</td></tr><tr><td>内容结构</td><td>发布时间、标签、文末 AI 提炼（写在文头元数据）</td><td>完成</td></tr><tr><td>约定</td><td>文件命名、<code>config.toml</code>、标签清单</td><td>完成</td></tr><tr><td>写作入口</td><td>本机网页编辑器（不暴露公网）</td><td>完成</td></tr><tr><td>分类</td><td>标签页与标签归档</td><td>完成</td></tr><tr><td>版本管理</td><td>安装 Git 并 <code>git init</code></td><td>完成初始化；尚未推远程</td></tr><tr><td>上线</td><td>GitHub Pages 工作流文件</td><td>已准备，等远程仓库</td></tr><tr><td>假提炼</td><td>浏览器里截断拼接「生成草稿」</td><td>已删除</td></tr></tbody></table>
+<h2>进展</h2>
+<table class="md-table"><thead><tr><th>进展</th><th>说明</th></tr></thead><tbody><tr><td>源码与产物分离</td><td>文章在 <code>posts/</code>，网页在 <code>site/</code>，构建可重复</td></tr><tr><td>命名统一</td><td>文章改为 <code>YYYY-MM-DD-...md</code></td></tr><tr><td>编辑体验</td><td>可在浏览器新建/编辑，保存后自动构建</td></tr><tr><td>日摘体例</td><td>本日这份日志即样例：表格 + <code>日摘</code> 标签</td></tr></tbody></table>
+<h2>问题</h2>
+<table class="md-table"><thead><tr><th>问题</th><th>影响</th><th>处理</th></tr></thead><tbody><tr><td>本机一度没有可用 Python / Git</td><td>构建与版本管理卡住</td><td>手动安装后恢复</td></tr><tr><td>Git 用包管理器下载失败</td><td>无法自动装 Git</td><td>改手动安装</td></tr><tr><td>编辑器旧进程占着旧端口</td><td>改了代码页面仍像没更新</td><td>换端口并重启进程</td></tr><tr><td>截断脚本充当「AI」</td><td>摘要质量明显差一截</td><td>去掉按钮，改走真模型写日摘</td></tr></tbody></table>
+<h2>反思</h2>
+<table class="md-table"><thead><tr><th>点</th><th>结论</th></tr></thead><tbody><tr><td>便宜步骤 vs 贵步骤</td><td>生成 HTML 可以全本地、每次全量构建；归纳、提炼必须由模型在对话或定时助手里做</td></tr><tr><td>公网写作</td><td>本机编辑已经满足日常；外网可写要登录和服务器，先不做</td></tr><tr><td>日摘位置</td><td>不要塞进每篇文章的提炼框；单独发一篇日志，标签用 <code>日摘</code></td></tr></tbody></table>
+<p>无实质进展的日子可以不发，或只写一行「无记录」。</p>
+</article>
+
+<section class="ai-brief" aria-label="AI 提炼">
+  <div class="ai-brief-head">
+    <p class="ai-label">AI 提炼</p>
+    <p class="ai-sub">结构化摘要 · 便于回顾</p>
+  </div>
+  <table class="ai-table">
+    <tbody>
+      <tr><th scope="row">一句话</th><td>今天把试验博客做成能读、能分类、能在本机网页里写；高质量摘要必须由模型写，不能靠截断脚本假装。</td></tr><tr><th scope="row">要点</th><td><ul class="ai-points"><li>静态站骨架与约定已落地</li><li>本机编辑器可用，公网保持只读</li><li>日摘应作为独立日志发布，而不是污染每篇文章的提炼框</li></ul></td></tr><tr><th scope="row">下一步</th><td>把仓库推上 GitHub，再用定时云端助手在每天 0 点生成次日可见的日摘。</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<p><a href="../posts.html">← 返回文章列表</a></p>
+
+      <p class="footer-note">本地试验博客 · 由 posts/ 中的 Markdown 生成</p>
+    </main>
+    <aside class="sidebar">
+      <a class="brand" href="../index.html">
+        initial_trial-blog
+        <span>本地静态试验</span>
+      </a>
+      <nav class="nav">
+        <a class="" href="../index.html">首页</a>
+        <a class="active" href="../posts.html">文章/日志</a>
+        <a class="" href="../tags.html">标签</a>
+      </nav>
+    </aside>
+  </div>
+</body>
+</html>
