@@ -13,3 +13,4 @@ Thumbs.db
 # Local secrets (if any later)
 .env
 .env.*
+.secrets/

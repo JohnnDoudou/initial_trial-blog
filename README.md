@@ -35,9 +35,13 @@ python admin_server.py
 
 ## 推送到 GitHub
 
-**推荐：** 双击 `推送到GitHub.bat` → 输入提交说明（可直接回车）→ 在 `Token:` 后粘贴 GitHub Token。
+**推荐：** 双击 `推送到GitHub.bat`
 
-推送成功后，GitHub Actions 会自动构建并更新 Pages。
+- 第一次会让你粘贴 Token，并保存到本地 `.secrets/github_token`（已加入 `.gitignore`，不会上传）
+- 之后再推送一般**不用再贴 Token**，更不用每次重新生成
+- 只有 Token 过期/失效/权限不够时，删掉 `.secrets/github_token` 再推一次即可
+
+推送成功后看 Actions 是否变绿，再刷新 Pages。
 
 ## 新建文章时的元数据
 
